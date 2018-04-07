@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH -t 2:00:00
+#SBATCH -n 24
+#SBATCH -p normal
+
+# Changed time because it overrran
+#Load modules to run python
+module load eb
+module load Miniconda2
+source deactivate
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# picking OTUs
+echo "Picking OTUs with open Silva reference - no Tax"
+time pick_open_reference_otus.py -i ~/2018/slout/seqs.fna \
+-r ~/ref_database/Silva/SILVA_128_QIIME_release/rep_set/rep_set_16S_only/97/97_otus_16S.fasta \
+-o ~/2018/otus/openS_noTax -a -O 24
+source deactivate
