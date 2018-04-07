@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+source deactivate
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# analysing OTUs diversity
+echo "Running Core_Diversity analysis on open default reference 2018 OTUs"
+time core_diversity_analyses.py -i ~/2018/otus/openD/otu_table_mc2_w_tax_no_pynast_failures.biom -m ~/2018_02_smb/map_complete.tsv -e 749 -t ~/2018/otus/rep_set.tre -o ~/2018/core_diversity/openD -a -O 24
+# deactivating environment
+source deactivate
