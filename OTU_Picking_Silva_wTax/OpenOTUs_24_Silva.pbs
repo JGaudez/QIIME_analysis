@@ -1,9 +1,8 @@
 #!/bin/bash
-#SBATCH -t 2:00:00
+#SBATCH -t 1:00:00
 #SBATCH -n 24
-#SBATCH -p normal
+#SBATCH -p short
 
-# Changed time because it overrran
 #Load modules to run python
 module load eb
 module load Miniconda2
