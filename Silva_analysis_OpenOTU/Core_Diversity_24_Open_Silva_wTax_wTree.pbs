@@ -13,9 +13,9 @@ source activate qiime1
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # analysing OTUs diversity
-echo "Running Core_Diversity analysis on Silva open reference 2018 OTUs from quality filtered sequences - no tax, with tree parameters"
-time core_diversity_analyses.py -i ~/2018/Qotus/openS_noTax/otu_table_mc2.biom -m ~/2018_02_smb/map_complete.tsv \
+echo "Running Core_Diversity analysis on Silva open reference 2018 OTUs - with Tree parameters"
+time core_diversity_analyses.py -i ~/2018/otus/openS/otu_table_mc2.biom -m ~/2018_02_smb/map_complete.tsv \
 -t \
--e 746 -o ~/2018/Qcore_diversity_Silva/openS_noTax_wTree -a -O 16
+-e 746 -o ~/2018/core_diversity_Silva/openS_wTree -a -O 16
 # deactivating environment
 source deactivate
