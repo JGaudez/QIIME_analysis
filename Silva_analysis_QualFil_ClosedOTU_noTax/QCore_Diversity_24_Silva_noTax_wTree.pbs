@@ -16,6 +16,6 @@ export TMPDIR=~/qiime_tmp
 echo "Running Core_Diversity analysis on closed Silva reference 2018 OTUs from quality filtered sequences - no tax, with tree parameters"
 time core_diversity_analyses.py -i ~/2018/Qotus/closedS_noTax/otu_table.biom -m ~/2018_02_smb/map_complete.tsv \
 -t ~/ref_database/Silva/SILVA_128_QIIME_release/trees/97/97_otus.tre \
--e 626 -o ~/2018/Qcore_diversity_Silva/closedS_noTax_wTree -a -O 16
+-e 626 -o ~/2018/Qcore_diversity/closedS_noTax_wTree -a -O 16
 # deactivating environment
 source deactivate
