@@ -14,5 +14,5 @@ source activate qiime1
 export TMPDIR=~/qiime_tmp
 # picking OTUs
 echo "Picking OTUs from quality filtered sequences with closed default reference"
-time pick_closed_reference_otus.py -i ~/2018/Qslout/seqs.fna -o ~/2018/Qotus/closedD -a -O 24
+time pick_closed_reference_otus.py -i ~/2018/Qslout/seqs.fna -o ~/2018/Qotus/closedD -a -O 16
 source deactivate

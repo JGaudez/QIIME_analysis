@@ -17,5 +17,5 @@ echo "Picking OTUs from quality filtered seuqences with open Silva reference - w
 time pick_open_reference_otus.py -i ~/2018/Qslout/seqs.fna \
 -r ~/ref_database/Silva/SILVA_128_QIIME_release/rep_set/rep_set_16S_only/97/97_otus_16S.fasta \
 -t ~/ref_database/Silva/SILVA_128_QIIME_release/taxonomy/16S_only/97/consensus_taxonomy_all_levels.txt \
--o ~/2018/Qotus/openS -a -O 24
+-o ~/2018/Qotus/openS -a -O 16
 source deactivate

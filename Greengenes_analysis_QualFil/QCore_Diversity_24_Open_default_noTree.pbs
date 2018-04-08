@@ -16,6 +16,6 @@ export TMPDIR=~/qiime_tmp
 echo "Running Core_Diversity analysis on open default reference 2018 OTUs from quality filtered sequences - with Tree parameter"
 time core_diversity_analyses.py -i ~/2018/Qotus/openD/otu_table_mc2_w_tax_no_pynast_failures.biom \
 -m ~/2018_02_smb/map_complete.tsv -e 749 \
--o ~/2018/Qcore_diversity_Greengenes/openD_noTree -a -O 24
+-o ~/2018/Qcore_diversity_Greengenes/openD_noTree -a -O 16
 # deactivating environment
 source deactivate
