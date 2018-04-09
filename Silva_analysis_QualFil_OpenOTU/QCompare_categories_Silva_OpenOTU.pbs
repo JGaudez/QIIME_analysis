@@ -6,11 +6,11 @@
 #Load modules to run python
 module load eb
 module load Miniconda2
-module load R
 source deactivate
 # loading virtualenv
 echo "loading virtualenv"
 source activate qiime1
+Module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 #Comparing categories
@@ -59,28 +59,6 @@ time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTr
 -m ~/2018_02_smb/map_complete.tsv -c SampleLatitude \
 -o ~/2018/QCompare_categories/openS_wTree/SampleLatitude/permdisp
 
-#IndividualSamples
-echo "Individual Samples, in order: adonis, anosim, morans_i, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--m ~/2018_02_smb/map_complete.tsv -c Description \
--o ~/2018/QCompare_categories/openS_wTree/Description/adonis
-
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--m ~/2018_02_smb/map_complete.tsv -c Description \
--o ~/2018/QCompare_categories/openS_wTree/Description/anosim
-
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--m ~/2018_02_smb/map_complete.tsv -c Description \
--o ~/2018/QCompare_categories/openS_wTree/Description/morans_i
-
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--m ~/2018_02_smb/map_complete.tsv -c Description \
--o ~/2018/QCompare_categories/openS_wTree/Description/mrpp
-
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--m ~/2018_02_smb/map_complete.tsv -c Description \
--o ~/2018/QCompare_categories/openS_wTree/Description/permdisp
-
 #SampleDepth
 echo "Sample Depth, in order: adonis, anosim, morans_i, mrpp, permdisp"
 time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
@@ -113,10 +91,6 @@ time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree
 -m ~/2018_02_smb/map_complete.tsv -c SampleFootFall \
 -o ~/2018/QCompare_categories/openS_wTree/SampleFootFall/anosim
 
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--m ~/2018_02_smb/map_complete.tsv -c SampleFootFall \
--o ~/2018/QCompare_categories/openS_wTree/SampleFootFall/morans_i
-
 time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleFootFall \
 -o ~/2018/QCompare_categories/openS_wTree/SampleFootFall/mrpp
@@ -134,10 +108,6 @@ time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree
 time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleVegetation \
 -o ~/2018/QCompare_categories/openS_wTree/SampleVegetation/anosim
-
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--m ~/2018_02_smb/map_complete.tsv -c SampleVegetation \
--o ~/2018/QCompare_categories/openS_wTree/SampleVegetation/morans_i
 
 time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleVegetation \
@@ -201,10 +171,6 @@ time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree
 -m ~/2018_02_smb/map_complete.tsv -c SamplePotassium \
 -o ~/2018/QCompare_categories/openS_wTree/SamplePotassium/anosim
 
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--m ~/2018_02_smb/map_complete.tsv -c SamplePotassium \
--o ~/2018/QCompare_categories/openS_wTree/SamplePotassium/morans_i
-
 time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePotassium \
 -o ~/2018/QCompare_categories/openS_wTree/SamplePotassium/mrpp
@@ -223,10 +189,6 @@ time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree
 -m ~/2018_02_smb/map_complete.tsv -c SampleNitrogen \
 -o ~/2018/QCompare_categories/openS_wTree/SampleNitrogen/anosim
 
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--m ~/2018_02_smb/map_complete.tsv -c SampleNitrogen \
--o ~/2018/QCompare_categories/openS_wTree/SampleNitrogen/morans_i
-
 time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleNitrogen \
 -o ~/2018/QCompare_categories/openS_wTree/SampleNitrogen/mrpp
@@ -244,10 +206,6 @@ time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree
 time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePhosphorus \
 -o ~/2018/QCompare_categories/openS_wTree/SamplePhosphorus/anosim
-
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--m ~/2018_02_smb/map_complete.tsv -c SamplePhosphorus \
--o ~/2018/QCompare_categories/openS_wTree/SamplePhosphorus/morans_i
 
 time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePhosphorus \
