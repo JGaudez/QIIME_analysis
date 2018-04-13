@@ -14,5 +14,5 @@ source activate qiime1
 export TMPDIR=~/qiime_tmp
 # picking OTUs
 echo "Picking OTUs with open default reference"
-time pick_open_reference_otus.py -i ~/2018/slout/seqs_chimeras_filtered.fna -o ~/2018/otus/openD -a -O 16
+time pick_open_reference_otus.py -i ~/2018/slout/seqs.fna -o ~/2018/otus/openD -a -O 16
 source deactivate

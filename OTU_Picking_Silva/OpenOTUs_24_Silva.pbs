@@ -14,7 +14,7 @@ source activate qiime1
 export TMPDIR=~/qiime_tmp
 # picking OTUs
 echo "Picking OTUs with open Silva reference"
-time pick_open_reference_otus.py -i ~/2018/slout/seqs_chimeras_filtered.fna/ \
--r ~/ref_database/SILVA_132_QIIME_release/rep_set/rep_set_16S_only/97/silva_132_92_16S.fna \
+time pick_open_reference_otus.py -i ~/2018/slout/seqs.fna \
+-r ~/ref_database/SILVA_132_QIIME_release/rep_set/rep_set_16S_only/97/silva_132_97_16S.fna \
 -o ~/2018/otus/openS -a -O 16
 source deactivate
