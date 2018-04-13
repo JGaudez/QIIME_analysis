@@ -40,5 +40,6 @@ time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
 -o ~/2018/Qextra_plots/openS/Distance_comparison_plot_longitude -g png\
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f SampleLongitude -c "SamplePh,SampleNitrogen,SamplePotassium,SamplePhosphorus"
+
 # Deactivating environment
 source deactivate
