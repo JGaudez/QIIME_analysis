@@ -14,7 +14,7 @@ source activate qiime1
 export TMPDIR=~/qiime_tmp
 # picking OTUs
 echo "Picking OTUs with closed Silva reference - no Tax"
-time pick_closed_reference_otus.py -i ~/2018/slout/seqs.fna \
--r ~/ref_database/Silva/SILVA_128_QIIME_release/rep_set/rep_set_16S_only/97/97_otus_16S.fasta \
+time pick_closed_reference_otus.py -i ~/2018/slout/usearch_checked_chimeras/seqs.fna \
+-r ~/ref_database/SILVA_132_QIIME_release/rep_set/rep_set_16S_only/97/silva_132_92_16S.fna \
 -o ~/2018/otus/closedS_noTax -a -O 16
 source deactivate

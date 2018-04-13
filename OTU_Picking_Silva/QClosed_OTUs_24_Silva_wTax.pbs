@@ -14,8 +14,8 @@ source activate qiime1
 export TMPDIR=~/qiime_tmp
 # picking OTUs
 echo "Picking OTUs from quality filtered sequences with closed Silva reference - with taxonomy parameter"
-time pick_closed_reference_otus.py -i ~/2018/Qslout/seqs.fna \
--r ~/ref_database/Silva/SILVA_128_QIIME_release/rep_set/rep_set_16S_only/97/97_otus_16S.fasta \
--t ~/ref_database/Silva/SILVA_128_QIIME_release/taxonomy/16S_only/97/consensus_taxonomy_all_levels.txt \
+time pick_closed_reference_otus.py -i ~/2018/Qslout/usearch_checked_chimeras/seqs.fna \
+-r ~/ref_database/SILVA_132_QIIME_release/rep_set/rep_set_16S_only/97/silva_132_92_16S.fna \
+-t ~/ref_database/SILVA_132_QIIME_release/taxonomy/16S_only/97/consensus_taxonomy_all_levels.txt \
 -o ~/2018/Qotus/closedS -a -O 16
 source deactivate

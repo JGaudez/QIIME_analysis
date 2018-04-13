@@ -1,0 +1,29 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+source deactivate
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+
+# Removing Chimeric sequences
+echo "Finding Chimeric sequences, ChimeraSlayer, Quality filtered Silva Open OTUs"
+time identify_chimeric_seqs.py -i ~/2018/Qotus/openS/rep_set_aligned.fasta \
+-m ChimeraSlayer -o ~/2018/Qotus/openS/chimeras.txt \
+-a ~/ref_database/SILVA_132_QIIME_release/rep_set_aligned/97/
+
+echo "Filtering out chimeric sequences"
+filter_fasta.py -f ~/2018/Qotus/openS/rep_set_aligned.fasta -o ~/2018/Qotus/openS/rep_set_aligned_no_chimera.fasta \
+-s ~/2018/Qotus/openS/chimeras.txt -n
+
+# Making the new OTU table
+echo "New OTU table"
+make_out_table.py -i ~/2018/Qotus/openS/otu_map.txt -o ~/2018/Qotus/openS/out_table.no_chimera.biom \
+-e ~/2018/Qotus/openS/chimeras.txt -t ~/2018/Qotus/openS/taxonomy.txt
