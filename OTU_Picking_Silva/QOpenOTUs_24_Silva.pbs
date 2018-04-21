@@ -16,5 +16,17 @@ export TMPDIR=~/qiime_tmp
 echo "Picking OTUs from quality filtered sequences with open Silva reference"
 time pick_open_reference_otus.py -i ~/2018/Qslout/seqs.fna \
 -r ~/ref_database/SILVA_132_QIIME_release/rep_set/rep_set_16S_only/97/silva_132_97_16S.fna \
--o ~/2018/Qotus/openS -a -O 16
+-o ~/2018/Qotus/openS -a -O 16 --suppress_taxonomy_assignment
+
+echo "Assign Taxonomy"
+time assign_taxonomy.py -i ~/2018/Qotus/openS/pynast_aligned_seqs/rep_set_aligned_pfiltered.fasta \
+-o ~/2018/Qotus/openS/Silva_assigned_tax \
+-t ~/ref_database/SILVA_132_QIIME_release/taxonomy/16S_only/97/majority_taxonomy_all_levels.txt \
+-r ~/ref_database/SILVA_132_QIIME_release/rep_set/rep_set_16S_only/97/silva_132_97_16S.fna
+
+echo "Add taxa to table"
+time add_taxa.py -i ~/2018/Qotus/openS/otu_table_mc2_no_pynast_failures.biom \
+-o  ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-t ~/2018/Qotus/openS/Silva_assigned_tax/rep_set_aligned_pfiltered_tax_assignment.txt
+
 source deactivate
