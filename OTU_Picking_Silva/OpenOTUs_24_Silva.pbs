@@ -24,9 +24,11 @@ time assign_taxonomy.py -i ~/2018/otus/openS/pynast_aligned_seqs/rep_set_aligned
 -t ~/ref_database/SILVA_132_QIIME_release/taxonomy/16S_only/97/majority_taxonomy_all_levels.txt \
 -r ~/ref_database/SILVA_132_QIIME_release/rep_set/rep_set_16S_only/97/silva_132_97_16S.fna
 
-echo "Add taxa to table"
-time add_taxa.py -i ~/2018/otus/openS/otu_table_mc2_no_pynast_failures.biom \
--o  ~/2018/otus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
--t ~/2018/otus/openS/Silva_assigned_tax/rep_set_aligned_pfiltered_tax_assignment.txt
+echo "New OTU table"
+time make_otu_table.py -i ~/2018/otus/openS/final_otu_map_mc2.txt \
+-o ~/2018/otus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-t ~/2018/otus/openS/Silva_assigned_tax/rep_set_aligned_pfiltered_tax_assignments.txt \
+-e ~/2018/otus/openS/pynast_aligned_seqs/rep_set_failures.fasta \
+-m ~/2018_02_smb/map_complete.tsv
 
 source deactivate

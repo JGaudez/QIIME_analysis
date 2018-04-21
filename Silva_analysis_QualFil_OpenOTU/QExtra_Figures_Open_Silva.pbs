@@ -27,17 +27,17 @@ time make_otu_heatmap.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_fai
 # Looking at distances between categories in the mapping file
 echo "Comparing distances between categories, Silva Open OTUs quality filtered, Boxplots and distance comparison plots"
 time make_distance_boxplots.py -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Qextra_plots/openS/boxplot -g png\
+-o ~/2018/Qextra_plots/openS/boxplot -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f "SampleLongitude,SampleLatitude,SampleFootFall,SampleDepth,SampleVegetation,SampleWeatherTemp,SamplePh,SampleNitrogen,SamplePotassium,SamplePhosphorus"
 
 time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Qextra_plots/openS/Distance_comparison_plot_Vegetation -g png\
+-o ~/2018/Qextra_plots/openS/Distance_comparison_plot_Vegetation -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f SampleVegetation -c "SamplePh,SampleNitrogen,SamplePotassium,SamplePhosphorus"
 
 time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Qextra_plots/openS/Distance_comparison_plot_longitude -g png\
+-o ~/2018/Qextra_plots/openS/Distance_comparison_plot_longitude -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f SampleLongitude -c "SamplePh,SampleNitrogen,SamplePotassium,SamplePhosphorus"
 
