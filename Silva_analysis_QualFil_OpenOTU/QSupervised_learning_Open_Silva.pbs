@@ -1,0 +1,57 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+source deactivate
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+Module load R
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+#Running Supervised Learning
+echo "Supervised learning on category SampleDepth"
+time supervised_learning.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qsupervised_Learning/openS/SampleDepth \
+-c SampleDepth -e cv10
+
+echo "Supervised learning on category SampleFootFall"
+time supervised_learning.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qsupervised_Learning/openS/SampleFootFall \
+-c SampleFootFall -e cv10
+
+echo "Supervised learning on category SampleMoisture"
+time supervised_learning.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qsupervised_Learning/openS/SampleMoisture \
+-c SampleMoisture -e cv10
+
+echo "Supervised learning on category SampleVegetation"
+time supervised_learning.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qsupervised_Learning/openS/SampleVegetation \
+-c SampleVegetation -e cv10
+
+echo "Supervised learning on category SamplePh"
+time supervised_learning.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qsupervised_Learning/openS/SamplePh \
+-c SamplePh -e cv10
+
+echo "Supervised learning on category SamplePotassium, SampleNitrogen, SamplePhosphorus"
+time supervised_learning.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qsupervised_Learning/openS/SamplePotassium \
+-c SamplePotassium -e cv10
+
+echo "Supervised learning on category SampleNitrogen"
+time supervised_learning.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qsupervised_Learning/openS/SampleNitrogen\
+-c SampleNitrogen -e cv10
+
+echo "Supervised learning on category SamplePhosphorus"
+time supervised_learning.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qsupervised_Learning/openS/SamplePhosphorus \
+-c SamplePhosphorus -e cv10
+
+source deactivate
