@@ -21,9 +21,9 @@ time jackknifed_beta_diversity.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_p
 
 # Making a Bootstrapped tree
 echo "Making bootstrapped tree from Jackknifed output"
-time make_bootstrapped_tree.py -m ~/2018/QJackknifed/unweighted_unifrac/upgma_cmp/master_tree.tre \
--s ~/2018/QJackknifed/unweighted_unifrac/upgma_cmp/jackknife_support.txt \
--o ~/2018/QJackknifed/unweighted_unifrac/upgma_cmp/jackknife_bottstrapped_tree.pdf
+time make_bootstrapped_tree.py -m ~/2018/QJackknifed/openS/unweighted_unifrac/upgma_cmp/master_tree.tre \
+-s ~/2018/QJackknifed/openS/unweighted_unifrac/upgma_cmp/jackknife_support.txt \
+-o ~/2018/QJackknifed/openS/unweighted_unifrac/upgma_cmp/jackknife_bottstrapped_tree.pdf
 
 # Deactivating Environment
 source deactivate
