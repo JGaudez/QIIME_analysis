@@ -6,6 +6,7 @@
 #Load modules to run python
 module load eb
 module load Miniconda2
+load R
 source deactivate
 # loading virtualenv
 echo "loading virtualenv"
