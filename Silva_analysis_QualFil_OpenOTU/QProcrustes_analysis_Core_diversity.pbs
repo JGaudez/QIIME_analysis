@@ -16,7 +16,7 @@ export TMPDIR=~/qiime_tmp
 #Procrustes analysis
 echo "Performing Procrustes analysis on Core_diversity output"
 time transform_coordinate_matrices.py \
--i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_pc.txt,weighted_unifrac_pc.txt \
+-i ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_pc.txt,~/2018/Qcore_diversity/openS_wTree/bdiv_even745/weighted_unifrac_pc.txt \
 -o ~/2018/Qcore_diversity/openS_wTree/procrustes_output
 
 time make_emperor.py -c -i ~/2018/Qcore_diversity/openS_wTree/procrustes_output \
