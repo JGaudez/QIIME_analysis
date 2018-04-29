@@ -6,11 +6,11 @@
 #Load modules to run python
 module load eb
 module load Miniconda2
+module load R
 source deactivate
 # loading virtualenv
 echo "loading virtualenv"
 source activate qiime1
-Module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 #Running Supervised Learning
