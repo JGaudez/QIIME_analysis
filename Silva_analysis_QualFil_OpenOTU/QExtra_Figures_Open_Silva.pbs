@@ -20,17 +20,24 @@ time make_otu_network.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_fai
 -o ~/2018/Qextra_plots/openS/otu_network
 
 # Making an OTU Heatmap
-echo "Making an OTU heatmap from Silva Open Reference from quality filtered sequences"
+echo "Making an OTU heatmap from Silva Open Reference from quality filtered sequences - first all, then geography, then vegetation"
 time make_otu_heatmap.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
 -m ~/2018_02_smb/map_complete.tsv -t ~/2018/Qotus/openS/rep_set.tre \
 -o ~/2018/Qextra_plots/openS/otu_heatmap.pdf
 
+time make_otu_heatmap.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -t ~/2018/Qotus/openS/rep_set.tre \
+-o ~/2018/Qextra_plots/openS/otu_heatmap_vegetation.pdf -c SampleVegetation
+
+time make_otu_heatmap.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -t ~/2018/Qotus/openS/rep_set.tre \
+-o ~/2018/Qextra_plots/openS/otu_heatmap_geography.pdf -c Geography
 # Looking at distances between categories in the mapping file
 echo "Comparing distances between categories, Silva Open OTUs quality filtered, Boxplots and distance comparison plots"
 time make_distance_boxplots.py -m ~/2018_02_smb/map_complete.tsv \
 -o ~/2018/Qextra_plots/openS/boxplot -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
--f "SampleLongitude,SampleLatitude,SampleFootFall,SampleDepth,SampleVegetation,SampleWeatherTemp,SamplePh,SampleNitrogen,SamplePotassium,SamplePhosphorus"
+-f "SampleLongitude,SampleLatitude,SampleFootFall,SampleDepth,SampleVegetation,SampleWeatherTemp,SamplePh,SampleNitrogen,SamplePotassium,SamplePhosphorus,Geography"
 
 time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
 -o ~/2018/Qextra_plots/openS/Distance_comparison_plot_Vegetation -g png \
@@ -38,39 +45,43 @@ time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
 -f SampleVegetation -c "none,grass,shrubs,mycelium,bushes,tree"
 
 time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Qextra_plots/openS/Distance_comparison_plot_longitude -g png \
+-o ~/2018/Qextra_plots/openS/Distance_comparison_plot_SampleDepth -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f SampleDepth -c "12.5,10,9.5,3,11.5,10.5,7,15,10.8,14,16,8.5,12,11"
 
 time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Qextra_plots/openS/Distance_comparison_plot_longitude -g png \
+-o ~/2018/Qextra_plots/openS/Distance_comparison_plot_SampleMoisture -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f SampleMoisture -c "low,dry,moist"
 
 time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Qextra_plots/openS/Distance_comparison_plot_longitude -g png \
+-o ~/2018/Qextra_plots/openS/Distance_comparison_plot_SampleWeatherTemp -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f SampleWeatherTemp -c "15,14,13"
 
 time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Qextra_plots/openS/Distance_comparison_plot_longitude -g png \
+-o ~/2018/Qextra_plots/openS/Distance_comparison_plot_SamplePh -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f SamplePh -c "5,9,5.5,5.6,8.5,6.5,5.7,8,8.5"
 
 time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Qextra_plots/openS/Distance_comparison_plot_longitude -g png \
+-o ~/2018/Qextra_plots/openS/Distance_comparison_plot_SamplePotassium -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f SamplePotassium -c "Medium,Trace,Low,Medium-High,Trace-Low"
 
 time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Qextra_plots/openS/Distance_comparison_plot_longitude -g png \
+-o ~/2018/Qextra_plots/openS/Distance_comparison_plot_SampleNitrogen -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f SampleNitrogen -c "Trace,Medium,Low,High,Low-Medium,Trace-Low"
 
 time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Qextra_plots/openS/Distance_comparison_plot_longitude -g png \
+-o ~/2018/Qextra_plots/openS/Distance_comparison_plot_SamplePhosphorus -g png \
 -d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
 -f SamplePhosphorus -c "High,Medium,Low,Trace,Trace-Low,Low-Medium"
 
+time make_distance_comparison_plots.py -m ~/2018_02_smb/map_complete.tsv \
+-o ~/2018/Qextra_plots/openS/Distance_comparison_plot_Geography -g png \
+-d ~/2018/Qcore_diversity/openS_wTree/bdiv_even745/unweighted_unifrac_dm.txt \
+-f Geography -c "North,South,East,West,Centre"
 # Deactivating environment
 source deactivate
