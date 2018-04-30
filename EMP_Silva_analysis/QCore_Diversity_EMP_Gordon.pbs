@@ -12,10 +12,6 @@ echo "loading virtualenv"
 source activate qiime1
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
-#Merging OTU tables
-echo "Merging OTU table from EMP with ours"
-time merge_otu_tables.py -i ~/2018_EMP_analysis/BIOM_Tables/emp.biom,~/2018_EMP_analysis/BIOM_Tables/otu_table.biom \
--o ~/2018_EMP_analysis/BIOM_Tables/merged_otu_table.biom
 # analysing OTUs diversity
 echo "Running Core_Diversity analysis on closed Silva reference 2018 OTUs from quality filtered sequences - with Tax, with Tree parameters"
 time core_diversity_analyses.py -i ~/2018_EMP_analysis/BIOM_Tables/merged_otu_table.biom \
