@@ -13,9 +13,9 @@ source activate qiime1
 module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
-echo "Filtering outlier OTUs from OTU table"
-filter_otus_from_otu_table.py -i ~/2018/Qotus/closedS/otu_table.biom \
--o ~/2018/Qotus/Filtered_Tables/otu_table_closedSQ.biom \
+echo "Filtering outlier OTUs from Closed OTU table"
+time filter_otus_from_otu_table.py -i ~/2018/Qotus/closedS/otu_table.biom \
+-o ~/2018/Qotus/Fotu_table_closedSQ.biom \
 --min_count_fraction 0.00005
 
 source deactivate

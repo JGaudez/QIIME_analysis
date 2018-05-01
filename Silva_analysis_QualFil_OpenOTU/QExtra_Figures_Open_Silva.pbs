@@ -15,21 +15,21 @@ module load R
 export TMPDIR=~/qiime_tmp
 # Making an OTU network
 echo "Making an OTU network from Silva Open Reference OTU, using quality filtered sequences"
-time make_otu_network.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+time make_otu_network.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
 -m ~/2018_02_smb/map_complete.tsv \
 -o ~/2018/Qextra_plots/openS/otu_network
 
 # Making an OTU Heatmap
 echo "Making an OTU heatmap from Silva Open Reference from quality filtered sequences - first all, then geography, then vegetation"
-time make_otu_heatmap.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+time make_otu_heatmap.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
 -m ~/2018_02_smb/map_complete.tsv -t ~/2018/Qotus/openS/rep_set.tre \
 -o ~/2018/Qextra_plots/openS/otu_heatmap.pdf
 
-time make_otu_heatmap.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+time make_otu_heatmap.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
 -m ~/2018_02_smb/map_complete.tsv -t ~/2018/Qotus/openS/rep_set.tre \
 -o ~/2018/Qextra_plots/openS/otu_heatmap_vegetation.pdf -c SampleVegetation
 
-time make_otu_heatmap.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+time make_otu_heatmap.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
 -m ~/2018_02_smb/map_complete.tsv -t ~/2018/Qotus/openS/rep_set.tre \
 -o ~/2018/Qextra_plots/openS/otu_heatmap_geography.pdf -c Geography
 # Looking at distances between categories in the mapping file

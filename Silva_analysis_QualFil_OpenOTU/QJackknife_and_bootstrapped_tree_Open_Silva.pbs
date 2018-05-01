@@ -14,7 +14,7 @@ source activate qiime1
 export TMPDIR=~/qiime_tmp
 # Performing jacknifed analysis
 echo "Performing Jackknifed beta diversity on Open Silva reference OTUs from quality filtered sequences"
-time jackknifed_beta_diversity.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+time jackknifed_beta_diversity.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
 -m ~/2018_02_smb/map_complete.tsv -e 3000 \
 -t ~/2018/Qotus/openS/rep_set.tre \
 -o ~/2018/QJackknifed/openS -a -O 16
