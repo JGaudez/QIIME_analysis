@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -t 3:00:00
+#SBATCH -t 4:00:00
 #SBATCH -n 24
 #SBATCH -p normal
 
@@ -17,6 +17,6 @@ echo "Running Core_Diversity analysis on EMP and our samples"
 time core_diversity_analyses.py -i ~/2018_EMP_analysis/BIOM_Tables/merged_otu_table.biom \
 -m ~/2018_EMP_analysis/emp_map.tsv \
 -t ~/ref_database/SILVA123_QIIME_release/trees/97/97_otus.tre \
--e 614 -o ~/2018_EMP_analysis/Core_diversity -a -O 16
+-e 605 -o ~/2018_EMP_analysis/Core_diversity -a -O 16
 # deactivating environment
 source deactivate

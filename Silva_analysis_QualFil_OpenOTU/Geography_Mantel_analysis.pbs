@@ -15,9 +15,9 @@ module load R
 export TMPDIR=~/qiime_tmp
 echo "Making distance matrix from category"
 time distance_matrix_from_mapping.py -i ~/2018_02_smb/map_complete.tsv \
--c Geography -o ~/2018/Qcore_diversity/Geography_Mantel/Geography_dm.txt
+-c SampleLongitude -o ~/2018/Qcore_diversity/Geography_Mantel/Geography_dm.txt
 
 echo "Comparing distance matrices using Mantel"
-time compare_distance_matrices.py -i ~/2018/Qcore_diversity/Geography_Mantel/Geography_dm.txt,~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_distance_matrices.py -i Geography_dm.txt,unweighted_unifrac_dm.txt \
 --method mantel -o ~/2018/Qcore_diversity/Geography_Mantel/Mantel
 source deactivate
