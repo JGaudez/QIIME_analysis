@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH -t 2:00:00
+#SBATCH -n 24
+#SBATCH -p normal
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+source deactivate
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# Filter OTUs based on Geography
+echo "Split filtered qual Silva open OTUs - Geography"
+time split_otu_table.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
+-m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qotus/SplitOTUs/openS_Geography \
+-f Geography
+
+source deactivate

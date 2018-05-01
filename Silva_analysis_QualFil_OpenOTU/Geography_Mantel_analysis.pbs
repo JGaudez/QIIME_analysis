@@ -14,7 +14,7 @@ module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 echo "Making distance matrix from category"
-time distance_matrix_from_mapping.py -m ~/2018_02_smb/map_complete.tsv \
+time distance_matrix_from_mapping.py -i ~/2018_02_smb/map_complete.tsv \
 -c Geography -o ~/2018/Qcore_diversity/Geography_Mantel/Geography_dm.txt
 
 echo "Comparing distance matrices using Mantel"
