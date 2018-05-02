@@ -15,10 +15,10 @@ module load R
 export TMPDIR=~/qiime_tmp
 # Comparing taxonomy
 echo "Comparing taxonomy - Geography"
-time comapre_taxa_summaries.py -m paired -i table_mc745_sorted_L3.txt,Geography_otu_table_L3.txt \
+time comapare_taxa_summaries.py -m paired -i table_mc745_sorted_L3.txt,Geography_otu_table_L3.txt \
 -o Geography
 
-time comapre_taxa_summaries.py -m paired -i table_mc745_sorted_L3,SampleVegetation_otu_table_L3.txt \
+time comapare_taxa_summaries.py -m paired -i table_mc745_sorted_L3,SampleVegetation_otu_table_L3.txt \
 -o Vegetation
 
 source deactivate
