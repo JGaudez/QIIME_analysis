@@ -16,10 +16,10 @@ export TMPDIR=~/qiime_tmp
 # Taxa for a single category
 echo "Summarise taxa through plots for geography and vegetation"
 time summarize_taxa_through_plots.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
--o ~/2018/Qcore_diversity/Additional_taxa_plots/Geography \
+-o ~/2018/Qcore_diversity/openS_w_Tree/Additional_taxa_plots/Geography \
 -m ~/2018_02_smb/map_complete.tsv -c Geography
 
 time summarize_taxa_through_plots.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
--o ~/2018/Qcore_diversity/Additional_taxa_plots/Vegetation \
+-o ~/2018/Qcore_diversity/openS_w_Tree/Additional_taxa_plots/Vegetation \
 -m ~/2018_02_smb/map_complete.tsv -c SampleVegetation
 source deactivate

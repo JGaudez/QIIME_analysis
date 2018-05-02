@@ -1,0 +1,36 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+source deactivate
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+module load R
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+echo "Group significance qual, non fil, Silva open OTUs"
+time group_significance.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -c SampleID \
+-o ~/2018/Non_filtered_Analysis/Group_Significance_SampleID.txt
+
+echo "Same with filtered otus"
+time group_significance.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
+-m ~/2018_02_smb/map_complete.tsv -c SampleID \
+-o ~/2018/Group_Significance_SampleID.txt
+
+echo "Same, Geography, non-filtered"
+time group_significance.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/2018_02_smb/map_complete.tsv -c Geography \
+-o ~/2018/Non_filtered_Analysis/Group_Significance_Geography.txt
+
+echo "Same, filtered geogrpahy"
+time group_significance.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
+-m ~/2018_02_smb/map_complete.tsv -c Geography \
+-o ~/2018/Group_Significance_Geography.txt
+
+source deactivate

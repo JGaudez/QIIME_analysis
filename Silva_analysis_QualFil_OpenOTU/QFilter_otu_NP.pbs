@@ -1,0 +1,37 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+source deactivate
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+module load R
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# Filtering taxa for natural products
+echo "Filtering taxa useful for Natural products - phyla level"
+time filter_taxa_from_otu_table.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-o ~/2018/Non_filtered_Analysis/Taxa_NP/otu_table_NP.biom \
+-p p_Actinobacteria
+
+echo "Same with filtered OTUs"
+time filter_taxa_from_otu_table.py -i ~/2018/Qotus/openS/Fotu_table_openSQ.biom \
+-o ~/2018/Taxa_NP/otu_table_NP.biom \
+-p p_Actinobacteria
+
+echo "Same for Geography table NF"
+time filter_taxa_from_otu_table.py -i ~/2018/Qcore_diversity/openS_w_Tree/Additional_taxa/Geography/Geography_otu_table.biom \
+-o ~/2018/Non_filtered_Analysis/Taxa_NP/otu_table_Geography_NP.biom \
+-p p_Actinobacteria
+
+echo "Same for Geography table - pre-filtered"
+time filter_taxa_from_otu_table.py -i ~/2018/Qcore_diversity/openS_w_Tree/Additional_taxa/Geography/Geography_otu_table.biom \
+-o ~/2018/Taxa_NP/otu_table_Geography_NP.biom \
+-p p_Actinobacteria
+
+source deactivate
