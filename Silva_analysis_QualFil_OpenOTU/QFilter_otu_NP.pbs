@@ -10,7 +10,6 @@ source deactivate
 # loading virtualenv
 echo "loading virtualenv"
 source activate qiime1
-module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # Filtering taxa for natural products

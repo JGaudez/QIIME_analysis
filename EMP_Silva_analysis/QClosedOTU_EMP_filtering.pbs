@@ -15,7 +15,7 @@ module load R
 export TMPDIR=~/qiime_tmp
 echo "Filtering outlier OTUs from OTU table - EMP"
 time filter_otus_from_otu_table.py -i ~/2018_EMP_analysis/GordonOTUs/otu_table.biom \
--o ~/2018_EMP_analysis/BIOM_Tables/Fotu_table_openSQ.biom \
+-o ~/2018_EMP_analysis/BIOM_Tables/Fotu_table_closedSQ.biom \
 --min_count_fraction 0.00005
 
 source deactivate
