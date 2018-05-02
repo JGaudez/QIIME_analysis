@@ -17,225 +17,225 @@ export TMPDIR=~/qiime_tmp
 echo "Comparing categories: seeing if differences between samples are statistically significant for quality filtered Silva open reference OTUs."
 # SampleLongitude
 echo "Sample Longitude, in order: adonis, anosim, morans_i, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleLongitude \
--o ~/2018/QCompare_categories/openS_wTree/SampleLongitude/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleLongitude/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleLongitude \
--o ~/2018/QCompare_categories/openS_wTree/SampleLongitude/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleLongitude/anosim
 
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleLongitude \
--o ~/2018/QCompare_categories/openS_wTree/SampleLongitude/morans_i
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleLongitude/morans_i
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleLongitude \
--o ~/2018/QCompare_categories/openS_wTree/SampleLongitude/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleLongitude/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleLongitude \
--o ~/2018/QCompare_categories/openS_wTree/SampleLongitude/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleLongitude/permdisp
 
 #SampleLatitude
 echo "Sample Latitude, in order: adonis, anosim, morans_i, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleLatitude \
--o ~/2018/QCompare_categories/openS_wTree/SampleLatitude/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleLatitude/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleLatitude \
--o ~/2018/QCompare_categories/openS_wTree/SampleLatitude/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleLatitude/anosim
 
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleLatitude \
--o ~/2018/QCompare_categories/openS_wTree/SampleLatitude/morans_i
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleLatitude/morans_i
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleLatitude \
--o ~/2018/QCompare_categories/openS_wTree/SampleLatitude/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleLatitude/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleLatitude \
--o ~/2018/QCompare_categories/openS_wTree/SampleLatitude/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleLatitude/permdisp
 
 #SampleDepth
 echo "Sample Depth, in order: adonis, anosim, morans_i, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleDepth \
--o ~/2018/QCompare_categories/openS_wTree/SampleDepth/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleDepth/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleDepth \
--o ~/2018/QCompare_categories/openS_wTree/SampleDepth/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleDepth/anosim
 
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleDepth \
--o ~/2018/QCompare_categories/openS_wTree/SampleDepth/morans_i
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleDepth/morans_i
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleDepth \
--o ~/2018/QCompare_categories/openS_wTree/SampleDepth/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleDepth/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleDepth \
--o ~/2018/QCompare_categories/openS_wTree/SampleDepth/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleDepth/permdisp
 
 #SampleFootFall
 echo "Sample Foot Fall, in order: adonis, anosim, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleFootFall \
--o ~/2018/QCompare_categories/openS_wTree/SampleFootFall/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleFootFall/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleFootFall \
--o ~/2018/QCompare_categories/openS_wTree/SampleFootFall/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleFootFall/anosim
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleFootFall \
--o ~/2018/QCompare_categories/openS_wTree/SampleFootFall/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleFootFall/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleFootFall \
--o ~/2018/QCompare_categories/openS_wTree/SampleFootFall/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleFootFall/permdisp
 
 #SampleVegetation
 echo "Sample Vegetation, in order: adonis, anosim, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleVegetation \
--o ~/2018/QCompare_categories/openS_wTree/SampleVegetation/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleVegetation/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleVegetation \
--o ~/2018/QCompare_categories/openS_wTree/SampleVegetation/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleVegetation/anosim
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleVegetation \
--o ~/2018/QCompare_categories/openS_wTree/SampleVegetation/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleVegetation/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleVegetation \
--o ~/2018/QCompare_categories/openS_wTree/SampleVegetation/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleVegetation/permdisp
 
 #SampleWeatherTemp
 echo "Sample Weather Temperature, in order: adonis, anosim, morans_i, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleWeatherTemp \
--o ~/2018/QCompare_categories/openS_wTree/SampleWeatherTemp/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleWeatherTemp/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleWeatherTemp \
--o ~/2018/QCompare_categories/openS_wTree/SampleWeatherTemp/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleWeatherTemp/anosim
 
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleWeatherTemp \
--o ~/2018/QCompare_categories/openS_wTree/SampleWeatherTemp/morans_i
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleWeatherTemp/morans_i
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleWeatherTemp \
--o ~/2018/QCompare_categories/openS_wTree/SampleWeatherTemp/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleWeatherTemp/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleWeatherTemp \
--o ~/2018/QCompare_categories/openS_wTree/SampleWeatherTemp/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleWeatherTemp/permdisp
 
 #SamplePh
 echo "Sample pH, in order: adonis, anosim, morans_i, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePh \
--o ~/2018/QCompare_categories/openS_wTree/SamplePh/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePh/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePh \
--o ~/2018/QCompare_categories/openS_wTree/SamplePh/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePh/anosim
 
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePh \
--o ~/2018/QCompare_categories/openS_wTree/SamplePh/morans_i
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePh/morans_i
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePh \
--o ~/2018/QCompare_categories/openS_wTree/SamplePh/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePh/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePh \
--o ~/2018/QCompare_categories/openS_wTree/SamplePh/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePh/permdisp
 
 #SamplePotassium
 echo "Sample Potassium, in order: adonis, anosim, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePotassium \
--o ~/2018/QCompare_categories/openS_wTree/SamplePotassium/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePotassium/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePotassium \
--o ~/2018/QCompare_categories/openS_wTree/SamplePotassium/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePotassium/anosim
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePotassium \
--o ~/2018/QCompare_categories/openS_wTree/SamplePotassium/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePotassium/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePotassium \
--o ~/2018/QCompare_categories/openS_wTree/SamplePotassium/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePotassium/permdisp
 
 #SampleNitrogen
 echo "Sample Nitrogen, in order: adonis, anosim, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleNitrogen \
--o ~/2018/QCompare_categories/openS_wTree/SampleNitrogen/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleNitrogen/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleNitrogen \
--o ~/2018/QCompare_categories/openS_wTree/SampleNitrogen/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleNitrogen/anosim
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleNitrogen \
--o ~/2018/QCompare_categories/openS_wTree/SampleNitrogen/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleNitrogen/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SampleNitrogen \
--o ~/2018/QCompare_categories/openS_wTree/SampleNitrogen/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/SampleNitrogen/permdisp
 
 #SamplePhosphorus
 echo "Sample Phoshorus, in order: adonis, anosim, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePhosphorus \
--o ~/2018/QCompare_categories/openS_wTree/SamplePhosphorus/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePhosphorus/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePhosphorus \
--o ~/2018/QCompare_categories/openS_wTree/SamplePhosphorus/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePhosphorus/anosim
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePhosphorus \
--o ~/2018/QCompare_categories/openS_wTree/SamplePhosphorus/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePhosphorus/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c SamplePhosphorus \
--o ~/2018/QCompare_categories/openS_wTree/SamplePhosphorus/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/SamplePhosphorus/permdisp
 
 #Geography
 echo "Geography, in order: adonis, anosim, morans_i, mrpp, permdisp"
-time compare_categories.py --method adonis -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method adonis -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c Geography \
--o ~/2018/QCompare_categories/openS_wTree/Geography/adonis
+-o ~/2018/QCompare_categories_more/openS_wTree/Geography/adonis
 
-time compare_categories.py --method anosim -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method anosim -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c Geography \
--o ~/2018/QCompare_categories/openS_wTree/Geography/anosim
+-o ~/2018/QCompare_categories_more/openS_wTree/Geography/anosim
 
-time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method morans_i -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c Geography \
--o ~/2018/QCompare_categories/openS_wTree/Geography/morans_i
+-o ~/2018/QCompare_categories_more/openS_wTree/Geography/morans_i
 
-time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method mrpp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c Geography \
--o ~/2018/QCompare_categories/openS_wTree/Geography/mrpp
+-o ~/2018/QCompare_categories_more/openS_wTree/Geography/mrpp
 
-time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity/openS_wTree/bdiv_even651/unweighted_unifrac_dm.txt \
+time compare_categories.py --method permdisp -i ~/2018/Qcore_diversity_more/openS_wTree/bdiv_even29397/unweighted_unifrac_dm.txt \
 -m ~/2018_02_smb/map_complete.tsv -c Geography \
--o ~/2018/QCompare_categories/openS_wTree/Geography/permdisp
+-o ~/2018/QCompare_categories_more/openS_wTree/Geography/permdisp
 
 # deactivating environment
 source deactivate
