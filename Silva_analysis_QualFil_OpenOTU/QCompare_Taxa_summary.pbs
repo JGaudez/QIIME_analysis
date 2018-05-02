@@ -16,10 +16,10 @@ export TMPDIR=~/qiime_tmp
 # Comparing taxonomy
 echo "Comparing taxonomy - Geography"
 time compare_taxa_summaries.py -m paired -i table_mc745_sorted_L3.txt,Geography_otu_table_L3.txt \
--o Geography
+-o Geography -s Geography_map.txt
 
 echo "Comparing taxonomy - Vegetation"
 time compare_taxa_summaries.py -m paired -i table_mc745_sorted_L3.txt,SampleVegetation_otu_table_L3.txt \
--o Vegetation
+-o Vegetation -s SampleVegetation_map.txt
 
 source deactivate
