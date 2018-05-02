@@ -25,12 +25,12 @@ time filter_taxa_from_otu_table.py -i ~/2018/Qotus/openS/Fotu_table_openSQ.biom 
 -p p_Actinobacteria
 
 echo "Same for Geography table NF"
-time filter_taxa_from_otu_table.py -i ~/2018/Qcore_diversity/openS_wTree/Additional_taxa/Geography/Geography_otu_table.biom \
+time filter_taxa_from_otu_table.py -i ~/2018/Qcore_diversity/openS_wTree/Additional_taxa_plots/Geography/Geography_otu_table.biom \
 -o ~/2018/Non_filtered_Analysis/Taxa_NP/otu_table_Geography_NP.biom \
 -p p_Actinobacteria
 
 echo "Same for Geography table - pre-filtered"
-time filter_taxa_from_otu_table.py -i ~/2018/Qcore_diversity/openS_wTree/Additional_taxa/Geography/Geography_otu_table.biom \
+time filter_taxa_from_otu_table.py -i ~/2018/Qcore_diversity/openS_wTree/Additional_taxa_plots/Geography/Geography_otu_table.biom \
 -o ~/2018/Taxa_NP/otu_table_Geography_NP.biom \
 -p p_Actinobacteria
 

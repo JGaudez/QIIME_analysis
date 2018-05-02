@@ -14,7 +14,7 @@ module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # compare alpha diversity
-echo "Compare alpha diversity, Geography, Vegetation and SampleID"
+echo "Compare alpha diversity, Geography, Vegetation and SampleID - Q open Silva NF"
 time compare_alpha_diversity.py \
 -i ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max745/alpha_div_collated/PD_whole_tree.txt \
 -m ~/2018_02_smb/map_complete.tsv \
@@ -24,7 +24,7 @@ time compare_alpha_diversity.py \
 time compare_alpha_diversity.py \
 -i ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max745/alpha_div_collated/PD_whole_tree.txt \
 -m ~/2018_02_smb/map_complete.tsv \
--o /2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/CompareAlpha/Vegetation \
+-o /2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/CompareAlpha/SampleVegetation \
 -c SampleVegetation
 
 time compare_alpha_diversity.py \
