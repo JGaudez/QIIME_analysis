@@ -10,14 +10,15 @@ source deactivate
 # loading virtualenv
 echo "loading virtualenv"
 source activate qiime1
+module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # Running beta diveristy on park samples, resulting with NMDS results
 echo "Running beta diversity -all NF Silva openSQ, only park samples"
-time beta_diversity_through_plots.py -m unweighted_unifrac,weighted_unifrac\
+time beta_diversity_through_plots.py -m ~/map_complete.tsv \
 -i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
 -o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs \
--m ~/map_complete.tsv -t ~/2018/Qotus/openS/rep_set.tre -a -O 16
+-t ~/2018/Qotus/openS/rep_set.tre -a -O 16
 
 echo "Running NMDS 2D and 3D"
 time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs \
