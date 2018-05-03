@@ -20,40 +20,22 @@ time beta_diversity_through_plots.py -m ~/map_complete.tsv \
 -o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs \
 -t ~/2018/Qotus/openS/rep_set.tre -a -O 16
 
-echo "Running NMDS 2D and 3D"
-time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs \
+echo "Running NMDS weighted and unweighted"
+time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs/weighted_unifrac_dm.txt \
 -o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/NMDS_2D -d 2
 
-time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/NMDS_3D -d 3
-
-echo "Running beta significance - weighted unifrac"
-time beta_significance.py -s weighted_unifrac \
--i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/beta_significance \
--t ~/2018/Qotus/openS/rep_set.tre
-
-echo "Running beta significance - unweighted unifrac"
-time beta_significance.py -s unweighted_unifrac \
--i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/beta_significance \
--t ~/2018/Qotus/openS/rep_set.tre
-
-echo "Running beta significance - p-test"
-time beta_significance.py -s p-test \
--i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/beta_significance \
--t ~/2018/Qotus/openS/rep_set.tre
+time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs/unweighted_unifrac_dm.txt \
+-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/NMDS_3D -d 2
 
 echo "Running categorised distance scatterplots - unweighted"
 time categorized_dist_scatterplot.py -m ~/map_complete.tsv \
--d ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs/unweighted_unifract_dm.txt \
+-d ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs/unweighted_unifrac_dm.txt \
 -p Geography -a Geography \
 -o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/Geography_scatterplot_unwei.png
 
 echo "Running categorised distance scatterplot - weighted"
 time categorized_dist_scatterplot.py -m ~/map_complete.tsv \
--d ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs/weighted_unifract_dm.txt \
+-d ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs/weighted_unifrac_dm.txt \
 -p Geography -a Geography \
 -o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/Geography_scatterplot_wei.png
 

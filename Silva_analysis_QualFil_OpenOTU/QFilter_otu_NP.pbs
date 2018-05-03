@@ -16,21 +16,21 @@ export TMPDIR=~/qiime_tmp
 echo "Filtering taxa useful for Natural products - phyla level"
 time filter_taxa_from_otu_table.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
 -o ~/2018/Non_filtered_Analysis/Taxa_NP/otu_table_NP.biom \
--p p__Actinobacteria
+-p c__Actinobacteria,c__Bacilli
 
 echo "Same with filtered OTUs"
 time filter_taxa_from_otu_table.py -i ~/2018/Qotus/openS/Fotu_table_openSQ.biom \
 -o ~/2018/Taxa_NP/otu_table_NP.biom \
--p p__Actinobacteria
+-p c__Actinobacteria,c__Bacilli
 
 echo "Same for Geography table NF"
 time filter_taxa_from_otu_table.py -i ~/2018/Qcore_diversity/openS_wTree/Additional_taxa_plots/Geography/Geography_otu_table.biom \
 -o ~/2018/Non_filtered_Analysis/Taxa_NP/otu_table_Geography_NP.biom \
--p p__Actinobacteria
+-p c__Actinobacteria,c__Bacilli
 
 echo "Same for Geography table - pre-filtered"
 time filter_taxa_from_otu_table.py -i ~/2018/Qcore_diversity/openS_wTree/Additional_taxa_plots/Geography/Geography_otu_table.biom \
 -o ~/2018/Taxa_NP/otu_table_Geography_NP.biom \
--p p__Actinobacteria
+-p c__Actinobacteria,c__Bacilli
 
 source deactivate
