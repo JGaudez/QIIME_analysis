@@ -16,6 +16,6 @@ export TMPDIR=~/qiime_tmp
 echo "Running alpha-diversity on non-subsampled OTUs, Q NF Silva open"
 time alpha_diversity.py -t ~/2018/Qotus/openS/rep_set.tre \
 -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
--o ~/2018/Non_filtered_Analysis/alpha_diversity_all
+-o ~/2018/Non_filtered_Analysis/alpha_diversity_all_NFopenSQ.txt 
 
 source deactivate
