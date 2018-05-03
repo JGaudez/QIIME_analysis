@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -t 2:00:00
+#SBATCH -t 1:00:00
 #SBATCH -n 24
 #SBATCH -p normal
 
@@ -12,26 +12,16 @@ echo "loading virtualenv"
 source activate qiime1
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
-# Filter OTUs based on Geography
-echo "Split filtered qual Silva open OTUs - SampleID and vegetation"
+# Keeping only OTUs in park
+echo "Split filtered qual Silva open OTUs - park and non_park"
 time split_otu_table.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
--m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qotus/SplitOTUs/openS_SampleID \
--f SampleID
+-m ~/map_complete.tsv -o ~/2018/Qotus/SplitOTUs/openS_Park_F \
+-f Location
 
-time split_otu_table.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
--m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qotus/SplitOTUs/openS_Vegetation \
--f SampleVegetation
+echo "Split non-filtered qual Silva open OTUs - park and non_park"
+time split_otu_table.py \
+-i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-m ~/map_complete.tsv -o ~/2018/Qotus/SplitOTUs/openS_Park \
+-f Location
 
-echo "Split non-filtered qual Silva open OTUs - Geograhpy, SampleID, Vegetation"
-time split_otu_table.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
--m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qotus/Non_F_SplitOTUs/openS_Geography \
--f Geography
-
-time split_otu_table.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
--m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qotus/Non_F_SplitOTUs/openS_SampleID \
--f SampleID
-
-time split_otu_table.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
--m ~/2018_02_smb/map_complete.tsv -o ~/2018/Qotus/Non_F_SplitOTUs/openS_Vegetation \
--f SampleVegetation
 source deactivate
