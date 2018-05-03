@@ -6,11 +6,11 @@
 #Load modules to run python
 module load eb
 module load Miniconda2
+module load R
 source deactivate
 # loading virtualenv
 echo "loading virtualenv"
 source activate qiime1
-module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # Running beta diveristy on park samples, resulting with NMDS results
@@ -27,8 +27,20 @@ time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs \
 time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs \
 -o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/NMDS_3D -d 3
 
-echo "Running beta significance"
-time beta_significance.py -s unweighted_unifrac,weighted_unifrac,p-test \
+echo "Running beta significance - weighted unifrac"
+time beta_significance.py -s weighted_unifrac \
+-i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
+-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/beta_significance \
+-t ~/2018/Qotus/openS/rep_set.tre
+
+echo "Running beta significance - unweighted unifrac"
+time beta_significance.py -s unweighted_unifrac \
+-i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
+-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/beta_significance \
+-t ~/2018/Qotus/openS/rep_set.tre
+
+echo "Running beta significance - p-test"
+time beta_significance.py -s p-test \
 -i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
 -o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/beta_significance \
 -t ~/2018/Qotus/openS/rep_set.tre
