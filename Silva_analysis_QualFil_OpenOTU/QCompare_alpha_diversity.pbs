@@ -16,21 +16,21 @@ export TMPDIR=~/qiime_tmp
 # compare alpha diversity
 echo "Compare alpha diversity, Geography, Vegetation and SampleID - Q open Silva NF"
 time compare_alpha_diversity.py \
--i ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max745/alpha_div_collated/PD_whole_tree.txt \
+-i ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/alpha_div_collated/PD_whole_tree.txt
 -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/CompareAlpha/Geography \
+-o ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/compare_alpha/Geography \
 -c Geography
 
-#time compare_alpha_diversity.py \
-#-i ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max745/alpha_div_collated/PD_whole_tree.txt \
-#-m ~/2018_02_smb/map_complete.tsv \
-#-o /2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/CompareAlpha/SampleVegetation \
-#-c SampleVegetation #Has an error, can't create folder
+time compare_alpha_diversity.py \
+-i ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/alpha_div_collated/PD_whole_tree.txt \
+-m ~/2018_02_smb/map_complete.tsv \
+-o /2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/CompareAlpha/SampleVegetation \
+-c SampleVegetation #Has an error, can't create folder
 
 time compare_alpha_diversity.py \
--i ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max745/alpha_div_collated/PD_whole_tree.txt \
+-i ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/alpha_div_collated/PD_whole_tree.txt \
 -m ~/2018_02_smb/map_complete.tsv \
--o ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/CompareAlpha/SampleID \
+-o ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/CompareAlpha/SampleID \
 -c Description
 
 source deactivate
