@@ -15,9 +15,9 @@ export TMPDIR=~/qiime_tmp
 # Keeping only OTUs in park
 echo "Split rarefied qual Silva open OTUs - park and non_park"
 time split_otu_table.py \
--i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/table_even38882.biom.gz \
+-i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
 -m ~/map_complete.tsv \
--o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/openS_Park \
+-o ~/2018/Qotus/SplitOTUs/openS_Park \
 -f Location
-echo "TO CHANGE"
+
 source deactivate

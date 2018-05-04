@@ -16,7 +16,7 @@ export TMPDIR=~/qiime_tmp
 # Looking at common taxonomy within samples
 echo "Computing core microbiome rare open Silva qual non-filtered"
 time compute_core_microbiome.py \
--i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/table_even38882.biom.gz \
--o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/Core_microbiome/openS/
+-i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
+-o ~/2018/Non_filtered_Analysis/QCore_microbiome/openS_Park/
 
 source deactivate
