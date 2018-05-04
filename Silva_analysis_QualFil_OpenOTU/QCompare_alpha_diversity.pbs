@@ -16,15 +16,15 @@ export TMPDIR=~/qiime_tmp
 # compare alpha diversity
 echo "Compare alpha diversity, Geography and SampleID - NF openSQ rare"
 time compare_alpha_diversity.py \
--i ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max38882/alpha_div_collated/PD_whole_tree.txt \
+-i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/arare_max38882/alpha_div_collated/PD_whole_tree.txt \
 -m ~/map_complete.tsv\
--o ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max38882/Compare_Alpha/Geography \
+-o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/arare_max38882/Compare_Alpha/Geography \
 -c Geography
 
 time compare_alpha_diversity.py \
--i ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max38882/alpha_div_collated/PD_whole_tree.txt \
+-i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/arare_max38882/alpha_div_collated/PD_whole_tree.txt \
 -m ~/map_complete.tsv\
--o ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max38882/Compare_Alpha/Geography \
+-o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/arare_max38882/Compare_Alpha/Geography \
 -c Description
 
 source deactivate
