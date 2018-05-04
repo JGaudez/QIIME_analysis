@@ -13,15 +13,11 @@ source activate qiime1
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # Keeping only OTUs in park
-echo "Split filtered qual Silva open OTUs - park and non_park"
-time split_otu_table.py -i ~/2018/Qotus/Fotu_table_openSQ.biom \
--m ~/map_complete.tsv -o ~/2018/Qotus/SplitOTUs/openS_Park_F \
--f Location
-
-echo "Split non-filtered qual Silva open OTUs - park and non_park"
+echo "Split rarefied qual Silva open OTUs - park and non_park"
 time split_otu_table.py \
--i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
--m ~/map_complete.tsv -o ~/2018/Qotus/SplitOTUs/openS_Park \
+-i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/table_even38882.biom.gz \
+-m ~/map_complete.tsv \
+-o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/openS_Park \
 -f Location
 
 source deactivate

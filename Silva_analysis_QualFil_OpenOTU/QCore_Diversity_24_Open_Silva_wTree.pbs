@@ -16,7 +16,7 @@ export TMPDIR=~/qiime_tmp
 echo "Running Core_Diversity analysis on filtered Silva open reference 2018 OTUs from quality filtered sequences - with Tree parameters"
 time core_diversity_analyses.py \
 -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
--m ~/2018_02_smb/map_complete.tsv --recover_from_failure \
+-m ~/map_complete.tsv --recover_from_failure \
 -t ~/2018/Qotus/openS/rep_set.tre \
 -e 38882 \
 -o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree -a -O 16

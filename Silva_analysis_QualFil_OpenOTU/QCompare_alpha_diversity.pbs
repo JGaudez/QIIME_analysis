@@ -14,23 +14,17 @@ module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # compare alpha diversity
-echo "Compare alpha diversity, Geography, Vegetation and SampleID - Q open Silva NF, no canal,foodwaste"
+echo "Compare alpha diversity, Geography and SampleID - NF openSQ rare"
 time compare_alpha_diversity.py \
--i ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/alpha_div_collated/PD_whole_tree.txt \
--m ~/2018_02_smb/map_complete.tsv\
--o ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/Compare_Alpha_only_park/Geography \
+-i ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max38882/alpha_div_collated/PD_whole_tree.txt \
+-m ~/map_complete.tsv\
+-o ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max38882/Compare_Alpha/Geography \
 -c Geography
 
 time compare_alpha_diversity.py \
--i ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/alpha_div_collated/PD_whole_tree.txt \
--m ~/2018_02_smb/map_complete.tsv\
--o /2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/Compare_Alpha_only_park/SampleVegetation \
--c SampleVegetation #Has an error, can't create folder
-
-time compare_alpha_diversity.py \
--i ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/alpha_div_collated/PD_whole_tree.txt \
--m ~/2018_02_smb/map_complete.tsv\
--o ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS/Compare_Alpha_only_park/SampleID \
+-i ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max38882/alpha_div_collated/PD_whole_tree.txt \
+-m ~/map_complete.tsv\
+-o ~/2018/Non_filtered_Analysis/Qcore_diversity/openS_wTree/arare_max38882/Compare_Alpha/Geography \
 -c Description
 
 source deactivate
