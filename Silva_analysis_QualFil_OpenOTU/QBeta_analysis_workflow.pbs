@@ -20,12 +20,12 @@ echo "Running beta diversity -all NF Silva openSQ, all samples"
 #-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs \
 #-t ~/2018/Qotus/openS/rep_set.tre -a -O 16
 
-echo "Running NMDS weighted and unweighted"
-time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/weighted_unifrac_dm.txt \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/NMDS_2D_weighted.txt -d 2
+#echo "Running NMDS weighted and unweighted"
+#time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/weighted_unifrac_dm.txt \
+#-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/NMDS_2D_weighted.txt -d 2
 
-time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/unweighted_unifrac_dm.txt \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/NMDS_2D_unweighted.txt -d 2
+#time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/unweighted_unifrac_dm.txt \
+#-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/NMDS_2D_unweighted.txt -d 2
 
 echo "Running categorised distance scatterplots - unweighted"
 time categorized_dist_scatterplot.py -m ~/map_complete.tsv \
