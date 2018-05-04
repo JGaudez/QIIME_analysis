@@ -14,7 +14,7 @@ module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # Looking at common taxonomy within samples
-echo "Computing core microbiome rare open Silva qual non-filtered 50% min only park"
+echo "Computing core microbiome rare open Silva qual non-filtered"
 time compute_core_microbiome.py \
 -i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/table_even38882.biom.gz \
 -o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/Core_microbiome/openS/

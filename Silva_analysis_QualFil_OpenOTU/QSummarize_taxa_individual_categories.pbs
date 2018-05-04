@@ -16,13 +16,13 @@ export TMPDIR=~/qiime_tmp
 # Taxa for a single category
 echo "Summarise taxa through plots core microbiome rare 50 100"
 time summarize_taxa_through_plots.py \
--i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/Core_microbiome/openS/core_table_50.biom \
--o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/Core_microbiome/openS/50_summary \
+-i ~/2018/Non_filtered_Analysis/QCore_microbiome/openS/core_table_50.biom \
+-o ~/2018/Non_filtered_Analysis/QCore_microbiome/openS/50_summary \
 -m ~/map_complete.tsv
 
 time summarize_taxa_through_plots.py \
--i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/Core_microbiome/openS/core_table_100.biom \
--o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/Core_microbiome/openS/100_summary \
+-i ~/2018/Non_filtered_Analysis/QCore_microbiome/openS/core_table_100.biom \
+-o ~/2018/Non_filtered_Analysis/QCore_microbiome/openS/100_summary \
 -m ~/map_complete.tsv
 
 source deactivate

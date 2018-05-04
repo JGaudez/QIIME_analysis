@@ -21,17 +21,17 @@ echo "Running beta diversity -all NF Silva openSQ, all samples"
 #-t ~/2018/Qotus/openS/rep_set.tre -a -O 16
 
 echo "Running NMDS weighted and unweighted"
-time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs/weighted_unifrac_dm.txt \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/NMDS_2D_weighted.txt -d 2
+time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/weighted_unifrac_dm.txt \
+-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/NMDS_2D_weighted.txt -d 2
 
-time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs/unweighted_unifrac_dm.txt \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/NMDS_2D_unweighted.txt -d 2
+time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/unweighted_unifrac_dm.txt \
+-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/NMDS_2D_unweighted.txt -d 2
 
 echo "Running categorised distance scatterplots - unweighted"
 time categorized_dist_scatterplot.py -m ~/map_complete.tsv \
--d ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs/unweighted_unifrac_dm.txt \
+-d ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/unweighted_unifrac_dm.txt \
 -p Location:Park -a ParkSamples \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/Geography_scatterplot_unwei.png
+-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/Geography_scatterplot_unwei.png
 
 echo "Running categorised distance scatterplot - weighted"
 time categorized_dist_scatterplot.py -m ~/map_complete.tsv \

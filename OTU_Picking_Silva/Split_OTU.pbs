@@ -19,5 +19,5 @@ time split_otu_table.py \
 -m ~/map_complete.tsv \
 -o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/openS_Park \
 -f Location
-
+echo "TO CHANGE"
 source deactivate

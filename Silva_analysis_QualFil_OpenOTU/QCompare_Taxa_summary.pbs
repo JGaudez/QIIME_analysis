@@ -14,12 +14,16 @@ module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # Comparing taxonomy
-echo "Comparing taxonomy - Geography"
-time compare_taxa_summaries.py -m paired -i table_mc745_sorted_L3.txt,Geography_otu_table_L3.txt \
--o Geography -s Geography_map.txt
+echo "Comparing taxonomy - 50 and 100"
+time compare_taxa_summaries.py -m paired -i core_table_100_L3.txt,core_table_50_L3.txt \
+-o 50_and_100
 
-echo "Comparing taxonomy - Vegetation"
-time compare_taxa_summaries.py -m paired -i table_mc745_sorted_L3.txt,SampleVegetation_otu_table_L3.txt \
--o Vegetation -s SampleVegetation_map.txt
+echo "Comparing taxonomy - 100 and all"
+time compare_taxa_summaries.py -m paired -i otu_table_park_L3.txt,core_table_100_L3.txt \
+-o 100_and_all
+
+echo "Comparing taxonomy - 50 and all"
+time compare_taxa_summaries.py -m paired -i otu_table_park_L3.txt,core_table_50_L3.txt.txt \
+-o 50_and_all
 
 source deactivate
