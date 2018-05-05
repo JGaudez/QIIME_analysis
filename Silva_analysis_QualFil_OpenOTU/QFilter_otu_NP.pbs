@@ -14,23 +14,12 @@ source activate qiime1
 export TMPDIR=~/qiime_tmp
 # Filtering taxa for natural products
 echo "Filtering taxa useful for Natural products - phyla level"
-time filter_taxa_from_otu_table.py -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
--o ~/2018/Non_filtered_Analysis/Taxa_NP/otu_table_NP.biom \
--p c__Actinobacteria,c__Bacilli
+time filter_taxa_from_otu_table.py \
+-i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-o ~/Taxa_NP/otu_table_NP.biom \
+-p c__Actinobacteria,c__Bacilli,p__Proteobacteria
 
-echo "Same with filtered OTUs"
-time filter_taxa_from_otu_table.py -i ~/2018/Qotus/openS/Fotu_table_openSQ.biom \
--o ~/2018/Taxa_NP/otu_table_NP.biom \
--p c__Actinobacteria,c__Bacilli
-
-echo "Same for Geography table NF"
-time filter_taxa_from_otu_table.py -i ~/2018/Qcore_diversity/openS_wTree/Additional_taxa_plots/Geography/Geography_otu_table.biom \
--o ~/2018/Non_filtered_Analysis/Taxa_NP/otu_table_Geography_NP.biom \
--p c__Actinobacteria,c__Bacilli
-
-echo "Same for Geography table - pre-filtered"
-time filter_taxa_from_otu_table.py -i ~/2018/Qcore_diversity/openS_wTree/Additional_taxa_plots/Geography/Geography_otu_table.biom \
--o ~/2018/Taxa_NP/otu_table_Geography_NP.biom \
--p c__Actinobacteria,c__Bacilli
-
+echo "Getting data out of it"
+time summarize_taxa_through_plots.py -i ~/Taxa_NP/otu_table_NP.biom \
+-o ~/Taxa_NP/taxa_plots -m ~/map_complete.tsv
 source deactivate
