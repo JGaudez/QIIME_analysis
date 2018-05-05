@@ -16,10 +16,10 @@ export TMPDIR=~/qiime_tmp
 echo "Filtering taxa useful for Natural products - phyla level"
 time filter_taxa_from_otu_table.py \
 -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
--o ~/Taxa_NP/otu_table_NP.biom \
+-o ~/otu_table_NP.biom \
 -p c__Actinobacteria,c__Bacilli,p__Proteobacteria
 
 echo "Getting data out of it"
-time summarize_taxa_through_plots.py -i ~/Taxa_NP/otu_table_NP.biom \
--o ~/Taxa_NP/taxa_plots -m ~/map_complete.tsv
+time summarize_taxa_through_plots.py -i ~/otu_table_NP.biom \
+-o ~/taxa_plots_NP -m ~/map_complete.tsv
 source deactivate
