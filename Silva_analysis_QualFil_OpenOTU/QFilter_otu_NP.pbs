@@ -15,7 +15,7 @@ export TMPDIR=~/qiime_tmp
 # Filtering taxa for natural products
 echo "Filtering taxa useful for Natural products - phyla level"
 time filter_taxa_from_otu_table.py \
--i ~/2018/Qotus/Non_F_SplitOTUs/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
+-i ~/2018/Qotus/Non_F_SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
 -o ~/otu_table_NP.biom \
 -p c__Actinobacteria,c__Bacilli,p__Proteobacteria
 
