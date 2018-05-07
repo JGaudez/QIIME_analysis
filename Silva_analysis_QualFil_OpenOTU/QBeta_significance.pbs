@@ -16,7 +16,7 @@ export TMPDIR=~/qiime_tmp
 # Beta significance - park only
 echo "Running beta significance - weighted unifrac"
 time beta_significance.py -s weighted_unifrac \
--i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
+-i ~/2018/Qotus/Non_F_SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
 -o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/beta_significance \
 -t ~/2018/Qotus/openS/rep_set.tre -n 30000
 
