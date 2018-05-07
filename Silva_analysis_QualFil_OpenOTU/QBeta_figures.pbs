@@ -1,0 +1,61 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+source deactivate
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+# generating files for beta_div
+echo "Making 2D PCoA plots, all samples non rarefied unweighted"
+time make_2D_plots.py -m ~/map_complete.tsv \
+-i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/unweighted_unifrac_pc.txt \
+-o ~/2D_PCoA/openS_All/unweighted
+
+echo "Making 2D PCoA plots, all samples non rarefied weighted"
+time make_2D_plots.py -m ~/map_complete.tsv \
+-i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/weighted_unifrac_pc.txt \
+-o ~/2D_PCoA/openS_All/weighted
+
+echo "Making 2D PCoA plots, all samples rarefied unweighted"
+time make_2D_plots.py -m ~/map_complete.tsv \
+-i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/bdiv_even38882/unweighted_unifrac_pc.txt \
+-o ~/2D_PCoA/openS_Rare/unweighted
+
+echo "Making 2D PCoA plots, all samples rarefied weighted"
+time make_2D_plots.py -m ~/map_complete.tsv \
+-i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/bdiv_even38882/weighted_unifrac_pc.txt \
+-o ~/2D_PCoA/openS_Rare/weighted
+
+# Now making bioplots
+echo "Making bioplots, all samples non rarefied unweighted"
+time make_emperor.py -m ~/map_complete.tsv \
+-t ~/2018/Non_filtered_Analysis/Whole_taxa_plots/otu_table_mc2_w_tax_no_pynast_failures_L2.txt \
+-i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/unweighted_unifrac_pc.txt \
+-o ~/bioplots/openS_All/unweighted
+
+echo "Making bioplots, all samples non rarefied weighted"
+time make_emperor.py -m ~/map_complete.tsv \
+-t ~/2018/Non_filtered_Analysis/Whole_taxa_plots/otu_table_mc2_w_tax_no_pynast_failures_L2.txt \
+-i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/weighted_unifrac_pc.txt \
+-o ~/bioplots/openS_All/weighted
+
+echo "Making bioplots, all samples rarefied unweighted"
+time make_emperor.py -m ~/map_complete.tsv \
+-t ~/2018/Non_filtered_Analysis/Whole_taxa_plots/otu_table_mc2_w_tax_no_pynast_failures_L2.txt \
+-i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/bdiv_even38882/unweighted_unifrac_pc.txt \
+-o ~/bioplots/openS_Rare/unweighted
+
+echo "Making bioplots, all samples rarefied weighted"
+time make_emperor.py -m ~/map_complete.tsv \
+-t ~/2018/Non_filtered_Analysis/Whole_taxa_plots/otu_table_mc2_w_tax_no_pynast_failures_L2.txt \
+-i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/bdiv_even38882/weighted_unifrac_pc.txt \
+-o ~/bioplots/openS_Rare/weighted
+
+source deactivate

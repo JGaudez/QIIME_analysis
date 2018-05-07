@@ -15,7 +15,7 @@ export TMPDIR=~/qiime_tmp
 # analysing alpha diversity
 echo "Running alpha-diversity on non-filtered OTUs, Q NF Silva open"
 time alpha_diversity.py -t ~/2018/Qotus/openS/rep_set.tre \
--i ~/table_even38882.biom \
--o ~/alpha_Div_Shannon_and_Eveness.txt -m shannon,simpson_e,simpson
+-i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-o ~/2018/Non_filtered_Analysis/alpha_diversity_all_NFopenSQ.txt
 
 source deactivate
