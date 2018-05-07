@@ -38,24 +38,24 @@ echo "Making bioplots, all samples non rarefied unweighted"
 time make_emperor.py -m ~/map_complete.tsv \
 -t ~/2018/Non_filtered_Analysis/Whole_taxa_plots/otu_table_mc2_w_tax_no_pynast_failures_L2.txt \
 -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/unweighted_unifrac_pc.txt \
--o ~/bioplots/openS_All/unweighted
+-o ~/bioplots/openS_All/unweighted --n_taxa_to_keep 5
 
 echo "Making bioplots, all samples non rarefied weighted"
 time make_emperor.py -m ~/map_complete.tsv \
 -t ~/2018/Non_filtered_Analysis/Whole_taxa_plots/otu_table_mc2_w_tax_no_pynast_failures_L2.txt \
 -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/weighted_unifrac_pc.txt \
--o ~/bioplots/openS_All/weighted
+-o ~/bioplots/openS_All/weighted --n_taxa_to_keep 5
 
 echo "Making bioplots, all samples rarefied unweighted"
 time make_emperor.py -m ~/map_complete.tsv \
 -t ~/2018/Non_filtered_Analysis/Whole_taxa_plots/otu_table_mc2_w_tax_no_pynast_failures_L2.txt \
 -i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/bdiv_even38882/unweighted_unifrac_pc.txt \
--o ~/bioplots/openS_Rare/unweighted
+-o ~/bioplots/openS_Rare/unweighted --n_taxa_to_keep 5
 
 echo "Making bioplots, all samples rarefied weighted"
 time make_emperor.py -m ~/map_complete.tsv \
 -t ~/2018/Non_filtered_Analysis/Whole_taxa_plots/otu_table_mc2_w_tax_no_pynast_failures_L2.txt \
 -i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/bdiv_even38882/weighted_unifrac_pc.txt \
--o ~/bioplots/openS_Rare/weighted
+-o ~/bioplots/openS_Rare/weighted --n_taxa_to_keep 5
 
 source deactivate
