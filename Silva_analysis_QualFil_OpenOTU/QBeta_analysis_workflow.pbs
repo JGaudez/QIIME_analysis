@@ -15,46 +15,16 @@ source activate qiime1
 export TMPDIR=~/qiime_tmp
 # Running beta diveristy on all samples, resulting with NMDS results
 echo "Running beta diversity -all NF Silva openSQ, all samples"
-#time beta_diversity_through_plots.py -m ~/map_complete.tsv \
-#-i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
-#-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs \
-#-t ~/2018/Qotus/openS/rep_set.tre -a -O 16
+time beta_diversity_through_plots.py -m ~/map_complete.tsv \
+-i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
+-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs \
+-t ~/2018/Qotus/openS/rep_set.tre -a -O 16
 
-#echo "Running NMDS weighted and unweighted"
-#time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/weighted_unifrac_dm.txt \
-#-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/NMDS_2D_weighted.txt -d 2
+echo "Running NMDS weighted and unweighted"
+time nmds.py -i ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/bdiv_even38882/weighted_unifrac_dm.txt \
+-o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/bdiv_even38882/NMDS_2D_weighted.txt -d 2
 
-#time nmds.py -i ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/unweighted_unifrac_dm.txt \
-#-o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/NMDS_2D_unweighted.txt -d 2
-
-echo "Running categorised distance scatterplots - unweighted"
-time categorized_dist_scatterplot.py -m ~/map_complete.tsv \
--d ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/DMs/unweighted_unifrac_dm.txt \
--p Location:Park -a ParkSamples \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS/Geography_scatterplot_unwei.png
-
-echo "Running categorised distance scatterplot - weighted"
-time categorized_dist_scatterplot.py -m ~/map_complete.tsv \
--d ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/DMs/weighted_unifrac_dm.txt \
--p Location:Park -a ParkSamples \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/Geography_scatterplot_wei.png
-
-echo "Last one: Differential abundance"
-time differential_abundance.py -m ~/map_complete.tsv \
--c Geography -x North -y South \
--i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/Diff_abundance/N_S
-
-echo "Differential abundance: diametrically opposed samples"
-time differential_abundance.py -m ~/map_complete.tsv \
--c Description -x team1 -y team30 \
--i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/Diff_abundance/T1_T30
-
-echo "Differential abundance: diametrically opposed samples"
-time differential_abundance.py -m ~/map_complete.tsv \
--c Description -x team4 -y team29 \
--i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
--o ~/2018/Non_filtered_Analysis/Qbeta_diversity/openS_Park/Diff_abundance/T4_T29
+time nmds.py -i ~/~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/bdiv_even38882/unweighted_unifrac_dm.txt \
+-o ~/2018/Non_filtered_Analysis/Qcore_diversity_more/openS_wTree/bdiv_even38882/NMDS_2D_unweighted.txt -d 2
 
 source deactivate
