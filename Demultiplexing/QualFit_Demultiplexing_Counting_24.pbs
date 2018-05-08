@@ -12,7 +12,10 @@ source activate qiime1
 export TMPDIR=~/qiime_tmp
 # splitting libraries
 echo "splitting libraries"
-time split_libraries_fastq.py --rev_comp_barcode --rev_comp_mapping_barcodes -i ~/2018/SeqPrep_Joined/seqprep_assembled.fastq.gz -b ~/2018/SeqPrep_Joined/seqprep_assembled.fastq_barcodes.fastq -q 19 -o ~/2018/Qslout -m ~/2018_02_smb/map_complete.tsv
+time split_libraries_fastq.py --rev_comp_barcode --rev_comp_mapping_barcodes \
+-i ~/2018/SeqPrep_Joined/seqprep_assembled.fastq.gz \
+-b ~/2018/SeqPrep_Joined/seqprep_assembled.fastq_barcodes.fastq \
+-q 19 -o ~/2018/Qslout -m ~/2018_02_smb/map_complete.tsv
 # counting sequences
 echo "Counting sequences"
 time count_seqs.py -i ~/2018/Qslout/seqs.fna
