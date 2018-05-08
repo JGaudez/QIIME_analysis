@@ -15,10 +15,10 @@ export TMPDIR=~/qiime_tmp
 # analysing OTUs diversity
 echo "Running Core_Diversity analysis on filtered Silva open reference 2018 OTUs from quality filtered sequences - with Tree parameters"
 time core_diversity_analyses.py \
--i ~/2018/Qotus/Non_F_SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
+-i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
 -m ~/map_complete.tsv --recover_from_failure \
--t ~/2018/Qotus/openS/rep_set.tre \
--e 38882 \
--o ~/openS_wTree_Park -a -O 16
+-t ~/2018/Qotus/openS/rep_set.tre #Linking back the tree is optional, hence "Tree" in output folder\
+-e 38882 #This is more sequences than for the lowest sample, hence the "More" in output folder\
+-o ~/2018/Qcore_diversity_more/openS_wTree -a -O 16 #16 parallel jobs on 24 cores was found to be the fastest
 # deactivating environment
 source deactivate

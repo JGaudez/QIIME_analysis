@@ -13,9 +13,10 @@ source activate qiime1
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # analysing alpha diversity
-echo "Running alpha-diversity on non-filtered OTUs, Q NF Silva open"
+echo "Running alpha-diversity on quality filtered open Silva otus"
 time alpha_diversity.py -t ~/2018/Qotus/openS/rep_set.tre \
 -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
--o ~/2018/Non_filtered_Analysis/alpha_diversity_all_NFopenSQ.txt
+-o ~/2018/alpha_diversity_all_NFopenSQ.txt \
+-m chao1,faith_pd,simpson,observed_otus
 
 source deactivate

@@ -13,10 +13,10 @@ source activate qiime1
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # Alpha rarefaction
-echo "Performing alpha rarefaction to compare with core_diversity output - NFopenSQ"
+echo "Performing alpha rarefaction to compare with core_diversity output - open silva quality filtered otus "
 time alpha_rarefaction.py -m ~/map_complete.tsv \
 -t ~/2018/Qotus/openS/rep_set.tre \
 -i ~/2018/Qotus/openS/otu_table_mc2_w_tax_no_pynast_failures.biom \
--o ~/2018/Non_filtered_Analysis/QAlpha_rarefaction/openS
+-o ~/2018/QAlpha_rarefaction/openS
 
 source deactivate

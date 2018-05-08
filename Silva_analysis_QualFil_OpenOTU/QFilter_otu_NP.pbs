@@ -15,14 +15,14 @@ export TMPDIR=~/qiime_tmp
 # Filtering taxa for natural products
 echo "Filtering taxa useful for Natural products - phyla level"
 time filter_taxa_from_otu_table.py \
--i ~/2018/Qotus/Non_F_SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
+-i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
 -o ~/otu_table_NP.biom \
--p c__Actinobacteria,c__Bacilli,p__Proteobacteria
+-p c__Actinobacteria,c__Bacilli,p__Proteobacteria # Classes for industrial microbiology
 
 echo "Getting data out of it"
 time summarize_taxa_through_plots.py -i ~/otu_table_NP.biom \
 -o ~/taxa_plots_NP -m ~/map_complete.tsv
-
+# Seeing if industrial microbiology bacteria prefer some park samples or areas
 echo "Finding if OTUs are unevenly spread - SampleID and Geography "
 echo "Group significance qual, non fil, Silva open OTUs"
 time group_significance.py -i ~/otu_table_NP.biom \
@@ -38,9 +38,6 @@ echo "Finding which samples are richer"
 time alpha_diversity.py -t ~/2018/Qotus/openS/rep_set.tre \
 -i ~/otu_table_NP.biom \
 -o ~/alpha_diversity_NP_NFopenSQ.txt
-
+ #Knowing the remaining OTU count and if some samples are richer for the taxa above
 biom summarize-table -i ~/otu_table_NP.biom -o ~/summary_NP.txt
-
-mkdir Taxa_NP
-mv otu_table_NP.biom taxa_plots_NP alpha_diversity_NP_NFopenSQ.txt Group_Significance_NP_Sample.txt Group_Significance_NP_Geography.txt summary_NP.txt Taxa_NP/
 source deactivate

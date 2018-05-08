@@ -13,7 +13,7 @@ source activate qiime1
 module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
-# Comparing taxonomy
+# Comparing taxonomy. This script would be located in the adequate folder with all files already present, hence why the path names are short
 echo "Comparing taxonomy - 50 and 100"
 time compare_taxa_summaries.py -m paired -i core_table_100_L3.txt,core_table_50_L3.txt \
 -o 50_and_100

@@ -14,9 +14,9 @@ module load R
 # setting temporary directory
 export TMPDIR=~/qiime_tmp
 # Looking at common taxonomy within samples
-echo "Computing core microbiome rare open Silva qual non-filtered"
+echo "Computing core microbiome open Silva quality filtered park only OTUs"
 time compute_core_microbiome.py \
 -i ~/2018/Qotus/SplitOTUs/openS_Park/otu_table_mc2_w_tax_no_pynast_failures__Location_Park__.biom \
--o ~/2018/Non_filtered_Analysis/QCore_microbiome/openS_Park/
+-o ~/2018/QCore_microbiome/openS_Park/
 
 source deactivate
